@@ -4,11 +4,15 @@ $.fn.passwordPlaceholder = function(){
 	}
 	
 	this.bind('focus', function(){
-		if(this.value == this.placeholder)
+		var _this = $(this);
+		if(_this.val() == _this.attr('placeholder')){
 			password(this);
+		}
 	}).bind('blur', function(){
-		if(this.value == '')
+		var _this = $(this);
+		if(_this.val() == ''){
 			text(this);
+		}
 	}).parents('form').bind('submit', function(e){
 		var input = $(this).find('.marker').next();
 		
@@ -42,16 +46,19 @@ $.fn.placeholder = function(){
 	}
 	
 	this.each(function(){
-		this.value = this.placeholder;
+		var _this = $(this);
+		_this.val(_this.attr('placeholder'));
 	});
 	
 	this.focusin(function(){
-		if(this.value == this.placeholder){
-			this.value = '';
+		var _this = $(this);
+		if(_this.val() == _this.attr('placeholder')){
+			_this.val('');
 		}
 	}).focusout(function(){
-		if(this.value == '')
-			this.value = this.placeholder;
+		var _this = $(this);
+		if(_this.val() == '')
+			_this.val(_this.attr('placeholder'));
 	}).parents('form').bind('submit', function(e){
 		var input = $(this).find('.marker').next();
 		
