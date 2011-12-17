@@ -1,7 +1,7 @@
 <html>
 	<head>
-		<script type="text/javascript" src="http://tz.static.com/js/jquery.js" ></script>
-		<script type="text/javascript" src="tzplaceholder.js" ></script>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js" ></script>
+		<script type="text/javascript" src="jquery.tzplaceholder.js" ></script>
 	</head>
 	<body>
 		<form name="form" action="" method="post">
@@ -11,8 +11,8 @@
 		</form>
 		<script type="text/javascript">
 			(function(w){
-				$(document.form.name).placeholder();
-				$(document.form.password).passwordPlaceholder();
+				$(document.form.name).placeholder(true);
+				$(document.form.password).pwdPlaceholder(true);
 			})(window);
 		</script>
 	</body>

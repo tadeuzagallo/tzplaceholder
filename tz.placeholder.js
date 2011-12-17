@@ -1,4 +1,4 @@
-$.fn.passwordPlaceholder = function(){
+$.fn.pwdPlaceholder = function(){
 	if('placeholder' in document.createElement('input') || !this[0]){
 		return;
 	}
@@ -12,7 +12,7 @@ $.fn.passwordPlaceholder = function(){
 	}).bind('blur', function(){
 		var _this = $(this);
 		if(_this.val() == ''){
-			text(this);
+			_this;
 		}
 	}).parents('form').bind('submit', function(e){
 		var input = $(this).find('.marker').next();
@@ -31,7 +31,8 @@ $.fn.passwordPlaceholder = function(){
 	var text = function password(obj){
 		var _this = $(obj);
 		var marker = _this.prev();
-		_this.detach().attr('type', 'text').val(_this.attr('placeholder')).insertAfter(marker);
+		obj.
+		_this.detach().attr('type', 'text')..val(_this.attr('placeholder')).insertAfter(marker);
 	};
 	
 	this.each(function(){
