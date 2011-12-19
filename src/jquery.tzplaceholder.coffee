@@ -32,7 +32,7 @@ $.fn.pwdPlaceholder = (force)->
 			do @focus
 	.bind 'blur', ->
 		_this = $ @
-		if not do _this.val
+		unless do _this.val
 			text _this
 	.parents('form').bind 'submit', ->
 		inputs = do $(@).find('.marker')
@@ -60,7 +60,7 @@ $.fn.placeholder = (force)->
 	.bind 'blur', ->
 		_this = $ @
 		
-		if not do _this.val
+		unless do _this.val
 			_this.addClass('tzplaceholder').val _this.attr 'placeholder'
 	.parents('form').bind 'submit', ->
 		inputs = $(@).find('.marker')
